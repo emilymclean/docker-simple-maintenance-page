@@ -10,6 +10,12 @@ on = new On {
             "develop"
         }
     }
+    push = new Push {
+        branches = new Listing {
+            "main"
+            "develop"
+        }
+    }
 }
 
 jobs = new Mapping {

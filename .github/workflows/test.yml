@@ -4,6 +4,10 @@ name: Test
     branches:
     - main
     - develop
+  push:
+    branches:
+    - main
+    - develop
 jobs:
   test:
     runs-on: ubuntu-latest
