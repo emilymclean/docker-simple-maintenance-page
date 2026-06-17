@@ -18,6 +18,8 @@ jobs:
         fetch-depth: 0
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v4.5.0
+      with:
+        versionSpec: 6.5.x
     - id: gitversion
       name: Use GitVersion
       uses: gittools/actions/gitversion/execute@v4.5.0

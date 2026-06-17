@@ -75,6 +75,9 @@ jobs = new Mapping {
             new ActionStep {
                 name = "Install GitVersion"
                 uses = "gittools/actions/gitversion/setup@v4.5.0"
+                with = new Mapping {
+                    ["versionSpec"] = "6.5.x"
+                }
             }
             new ActionStep {
                 name = "Use GitVersion"
