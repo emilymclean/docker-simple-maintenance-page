@@ -74,7 +74,7 @@ jobs = new Mapping {
             common.checkout
             new ActionStep {
                 name = "Install GitVersion"
-                uses = "gittools/actions/gitversion/setup@v3.0.0"
+                uses = "gittools/actions/gitversion/setup@v4.5.0"
                 with = new Mapping {
                     ["versionSpec"] = "5.x"
                 }
@@ -82,7 +82,7 @@ jobs = new Mapping {
             new ActionStep {
                 name = "Use GitVersion"
                 id = "gitversion"
-                uses = "gittools/actions/gitversion/execute@v3.0.0"
+                uses = "gittools/actions/gitversion/execute@v4.5.0"
                 with = new Mapping {
                     ["useConfigFile"] = true
                     ["configFilePath"] = "./gitversion.yml"
@@ -131,7 +131,7 @@ jobs = new Mapping {
     ["docker-ghcr"] = dockerJob(
         new ActionStep {
             name = "Log in to the Container registry"
-            uses = "docker/login-action@v3"
+            uses = "docker/login-action@v4"
             with = new Mapping {
                 ["registry"] = "https://ghcr.io"
                 ["username"] = "${{ github.actor }}"
@@ -143,7 +143,7 @@ jobs = new Mapping {
     ["docker-docker"] = dockerJob(
         new ActionStep {
             name = "Log in to the Container registry"
-            uses = "docker/login-action@v3"
+            uses = "docker/login-action@v4"
             with = new Mapping {
                 ["username"] = "${{ vars.DOCKER_USERNAME }}"
                 ["password"] = "${{ secrets.DOCKER_PAT }}"

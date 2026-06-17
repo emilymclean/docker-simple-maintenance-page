@@ -2,7 +2,7 @@ open module common
 extends "base.pkl"
 
 hidden checkout = new ActionStep {
-    uses = "actions/checkout@v4"
+    uses = "actions/checkout@v6"
     with = new Mapping {
         ["fetch-depth"] = 0
     }
@@ -17,16 +17,16 @@ hidden currentNginxVersion: Step = new CommandStep {
 
 hidden dockerBuild: Step = new ActionStep {
     name = "Build and push Docker image"
-    uses = "docker/build-push-action@v6"
+    uses = "docker/build-push-action@v7"
 }
 
 hidden dockerSetup: Listing<Step> = new Listing {
     new ActionStep {
         name = "Setup QEMU"
-        uses = "docker/setup-qemu-action@v3"
+        uses = "docker/setup-qemu-action@v4"
     }
     new ActionStep {
         name = "Setup Docker Buildx"
-        uses = "docker/setup-buildx-action@v3"
+        uses = "docker/setup-buildx-action@v4"
     }
 }
